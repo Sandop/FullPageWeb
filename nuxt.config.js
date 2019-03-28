@@ -1,55 +1,60 @@
 
 export default {
-  mode: 'universal',
+	mode: 'universal',
 
-  /*
-  ** Headers of the page
-  */
-  head: {
-    title: '中信消费金融有限公司',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '中信消费金融' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
-  },
+	/*
+	** Headers of the page
+	*/
+	head: {
+		title: '中信消费金融有限公司',
+		meta: [
+			{ charset: 'utf-8' },
+			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
+			{ hid: 'description', name: 'description', content: '中信消费金融' }
+		],
+		link: [
+			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+		]
+	},
 
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
+	/*
+	** Customize the progress-bar color
+	*/
+	loading: { color: '#FC0000' },
 
-  /*
-  ** Global CSS
-  */
-  css: [
-    // 项目里要使用的 SCSS 文件
-    '@/assets/css/main.scss'
-  ],
+	/*
+	** Global CSS
+	*/
+	css: [
+		// 项目里要使用的 SCSS 文件
+		'@/assets/css/main.scss'
+	],
 
-  /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-  ],
+	/*
+	** Plugins to load before mounting the App
+	*/
+	plugins: [
+	],
 
-  /*
-  ** Nuxt.js modules
-  */
-  modules: [
-  ],
+	/*
+	** Nuxt.js modules
+	*/
+	modules: [
+	],
 
-  /*
-  ** Build configuration
-  */
-  build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-    }
-  }
+	/*
+	** Build configuration
+	*/
+	build: {
+		/**
+		 * 将查看源代码中的css采用外部引入方式
+		 */
+		extractCSS: {
+			allChunks: true
+		},
+		vender: ['axios'],
+		extend (config, { isDev, isClient }) {
+			
+		}
+	}
 }

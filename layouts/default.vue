@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="wrap">
 		<v-header></v-header>
 		<nuxt />
 		<v-footer></v-footer>
@@ -21,9 +21,13 @@
 
 <style lang="scss">
 	html {
+		width: 100%;
+		height: 100%;
 		box-sizing: border-box;
 	}
 	body{
+		width: 100%;
+		height: 100%;
 		background:#fff;
 		color:#000;
 		font-size:14px;
@@ -35,5 +39,9 @@
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
+	}
+	.wrap {
+		width: 100%;
+		height: 100%;
 	}
 </style>
