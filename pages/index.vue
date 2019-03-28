@@ -1,5 +1,6 @@
 <template>
 	<section class="container">
+		<div class="page-wrap">
 			<page :currentPage='currentPage'>
 				第一部分
 			</page>
@@ -9,10 +10,8 @@
 			<page :currentPage='currentPage'>
 				第三部333分
 			</page>
-			<page :currentPage='currentPage'>
-				第四部分
-			</page>
 			<page-controller :pageNum="pageNum" :currentPage="currentPage" @changePage="changePage" :option="controllerOption"></page-controller>
+		</div>
 	</section>
 </template>
 
@@ -35,10 +34,6 @@
 						isCenter: true,
 					},{
 						background: 'rgba(229, 19, 46, 1)',
-						color: '#fff',
-						isCenter: true,
-					},{
-						background: 'rgba(29, 199, 46, 1)',
 						color: '#fff',
 						isCenter: true,
 					}
@@ -97,5 +92,13 @@
 .container {
 	overflow: hidden;
 	width: 100%;
+	height: 100%;
+
+	.page-wrap {
+		position: relative;
+		width: 1200px;
+		height: 100%;
+		margin: 0 auto;
+	}
 }
 </style>

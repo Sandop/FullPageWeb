@@ -61,6 +61,45 @@
 
                 .header-nav {
                     float: right;
+                    margin-top: 35px;
+
+                    ul {
+                        overflow: hidden;
+
+                        li.nav-list {
+                            float: left;
+                            min-width: 80px;
+                            height: 30px;
+                            margin: 5px 0 5px 30px; 
+                            line-height: 30px;
+
+                            a {
+                                position: relative;
+                                font-size: 14px;
+                                font-family:PingFangSC-Regular;
+                                font-weight:400;
+                                color:rgba(54,54,54,1);
+
+                                &.nuxt-link-exact-active {
+                                    font-size: 18px;
+                                    font-family:PingFangSC-Semibold;
+                                    font-weight:600;
+
+                                    &:after {
+                                        content: '';
+                                        position: absolute;
+                                        bottom: -7px;
+                                        left: 50%;
+                                        width: 33px;
+                                        height: 2px;
+                                        background: #ff5858;
+                                        border-radius: 6px;
+                                        transform: translateX(-50%);
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

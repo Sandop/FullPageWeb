@@ -1,10 +1,12 @@
 <template>
     <nav class="controller">
-        <button v-if="option.arrowsTypePre" class="prev-btn" :class="{moving:option.arrowsType === 'animate'}" @click="changePage(prevIndex)"></button>
+        <div v-if="option.arrowsTypePre" class="prev-btn" :class="{moving:option.arrowsType === 'animate'}" @click="changePage(prevIndex)"></div>
         <ul v-if="option.navbar">
-            <li v-for="index in pageNum" @click="changePage(index)" :class="{current:option.highlight && index === currentPage}" :key="'controller-'+index" :data-index="index" class="controller-item"></li>
+            <li v-for="index in pageNum" @click="changePage(index)" :class="{current:option.highlight && index === currentPage,color: currentPage === pageNum}" :key="'controller-'+index" :data-index="index" class="controller-item"></li>
         </ul>
-        <button v-if="option.arrowsTypeNext && !(currentPage ==  pageNum)" class="next-btn" :class="{moving:option.arrowsType === 'animate'}" @click="changePage(nextIndex)"></button>
+        <div v-if="option.arrowsTypeNext && !(currentPage ==  pageNum)" class="next-btn" :class="{moving:option.arrowsType === 'animate'}" @click="changePage(nextIndex)">
+            <img src="~/assets/images/index/next-btn.png">
+        </div>
     </nav>
 </template>
 
@@ -115,22 +117,21 @@
 
 <style lang='scss' scoped>
 .controller {
-    position: fixed;
-    right: 20px;
+    position: absolute;
+    right: 25px;
     top: 50%;
     z-index: 99;
 
     ul {
-        transform: translate3d(0,-50%,0);
-        list-style: none;
         margin: 0;
         padding: 0;
+        transform: translate3d(0,-50%,0);
 
         .controller-item {
-            width: 20px;
-            height: 20px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            margin-top: 10px;
+            margin-top: 16px;
             background-color: rgba(255, 255, 255, 0.3);
             transition: background-color 0.3s ease 0s;
             cursor: pointer;
@@ -138,8 +139,20 @@
             &:hover {
                 background-color: rgba(255, 255, 255, 0.7);
             }
+
             &.current {
                 background-color: rgba(255, 255, 255, 1);
+            }
+
+            &.color {
+                background-color: rgba(166,166,166,0.3);
+
+                &:hover {
+                    background-color: rgba(166,166,166,0.7);
+                }
+                &.current {
+                    background-color: rgba(166,166,166,1);
+                }
             }
         }
     }
@@ -148,13 +161,14 @@
         position: fixed;
         left: 50%;
         display: block;
-        width: 20px;
-        height: 20px;
-        margin-left: -10px;
-        text-align: center;
-        border: 4px solid #fff;
+        width: 26px;
+        height: 28px;
+        margin-left: -13px;
+        // text-align: center;
+        // border: 4px solid #fff;
         background-color: transparent;
         outline: none;
+        border: none;
         cursor: pointer;
     }
     .prev-btn {
@@ -169,12 +183,17 @@
     }
     .next-btn {
         bottom: 65px;
-        transform: rotate(45deg);
-        border-top-color: transparent;
-        border-left-color: transparent;
-
+        // transform: rotate(45deg);
+        // border-top-color: transparent;
+        // border-left-color: transparent;
+        // background: url("@/assets/images/index/next-btn.png") center center no-repeat;
         &.moving {
             animation: next-up-down 0.7s linear 0s infinite;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
         }
     }
 }
