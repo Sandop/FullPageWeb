@@ -117,14 +117,13 @@
 
 <style lang='scss' scoped>
 .controller {
-    position: absolute;
-    right: 25px;
-    top: 50%;
-    z-index: 99;
+    
 
     ul {
-        margin: 0;
-        padding: 0;
+        position: absolute;
+        right: 25px;
+        top: 50%;
+        z-index: 99;
         transform: translate3d(0,-50%,0);
 
         .controller-item {
@@ -170,6 +169,7 @@
         outline: none;
         border: none;
         cursor: pointer;
+        z-index: 99;
     }
     .prev-btn {
         top: 65px;

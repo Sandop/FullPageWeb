@@ -1,11 +1,13 @@
 <template>
     <section class="page" v-if="option" 
-        :style="{background: option.background,color: option.color||'#fff'}"      
+        :style="'background-image:url(\''+option.background+'\')'"      
         :class="{'page-before': option.index < currentPage,
                 'page-after': option.index > currentPage,
                 'page-current': option.index === currentPage}">
-        <div :class="{'all-center': option.isCenter}">
-            <slot></slot>
+        <div class="page-box" :style="{background: option.backgroundColor}"   >
+            <div class="page-wrap">
+                <slot></slot>
+            </div>
         </div>
     </section>
     <section class="page" v-else>页面正在渲染中。。。</section>
@@ -21,7 +23,9 @@ export default {
         return {
             option: null
         }
-    }
+    },
+    mounted() {
+    },
 }
 </script>
 
@@ -33,16 +37,24 @@ export default {
         bottom: 0;
         left: 0;
         right: 0;
+        background-position: center;
+        background-repeat: no-repeat;
         transition: all 0.5s ease 0s;
         z-index: 1;
 
-        .all-center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+        .page-box {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
 
+            .page-wrap {
+                overflow: hidden;
+                width: 1200px;
+                height: 100%;
+                margin: 0 auto;
+                padding-top: 250px;
+            }
+        }
         &.page-before {
             z-index: 0;
             transform: translate3d(0, -100%, 0);
