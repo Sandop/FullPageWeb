@@ -1,10 +1,10 @@
 <template>
 	<section class="container">
 		<div class="page-wrap">
-			<page :currentPage='currentPage'>
+			<page :currentPage='currentPage' :pageNum="pageNum">
 				<page-one></page-one>
 			</page>
-			<page :currentPage='currentPage'>
+			<page :currentPage='currentPage' :pageNum="pageNum">
 				<div class="title">
 					<p class="title-cn">中信消费金融有限公司 > 股东简介</p>
 					<p class="title-en">CITIC Consumer Finance Co.,Ltd. > Shareholder introduction</p>
@@ -17,7 +17,7 @@
 					</ul>
 				</div>
 			</page>
-			<page :currentPage='currentPage'>
+			<page :currentPage='currentPage' :pageNum="pageNum">
 				<div class="company-title">
 					<p class="title-cn">中信消费金融有限公司 > 公司大事记</p>
 					<p class="title-en">CITIC Consumer Finance Co.,Ltd. > Company Events</p>
@@ -41,6 +41,7 @@
 	import PageOne from "~/components/index/PageOne"
 	import PageTwoList from "~/components/index/PageTwoList"
 	import PageCompanyDevolp from "~/components/index/PageCompanyDevolp"
+  	import VFooter from '~/components/common/footer'
 
 	export default {
 		data (){
@@ -145,7 +146,8 @@
 			PageController,
 			PageOne,
 			PageTwoList,
-			PageCompanyDevolp
+			PageCompanyDevolp,
+			VFooter
 		},
 		mounted() {
 			this.$children.forEach((child, index) => {

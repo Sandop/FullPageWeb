@@ -117,7 +117,10 @@
 
 <style lang='scss' scoped>
 .controller {
-    
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    z-index: 99;
 
     ul {
         position: absolute;

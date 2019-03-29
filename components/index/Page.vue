@@ -8,25 +8,32 @@
             <div class="page-wrap">
                 <slot></slot>
             </div>
+            <div class="page-footer"  v-if="currentPage ==  pageNum">
+                <v-footer></v-footer>
+            </div>
         </div>
     </section>
     <section class="page" v-else>页面正在渲染中。。。</section>
 </template>
 
 <script>
-export default {
-    name: 'page',
-    props: {
-        currentPage: Number
-    },
-    data (){
-        return {
-            option: null
+  	import VFooter from '~/components/common/footer'
+
+    export default {
+        name: 'page',
+        props: {
+            pageNum: Number,
+            currentPage: Number
+        },
+        data (){
+            return {
+                option: null
+            }
+        },
+        components: {
+           VFooter 
         }
-    },
-    mounted() {
-    },
-}
+    }
 </script>
 
 <style lang="scss" scoped>
@@ -43,6 +50,7 @@ export default {
         z-index: 1;
 
         .page-box {
+            position: relative;
             overflow: hidden;
             width: 100%;
             height: 100%;
@@ -53,6 +61,13 @@ export default {
                 height: 100%;
                 margin: 0 auto;
                 padding-top: 250px;
+            }
+
+            .page-footer {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                background: #fff;
             }
         }
         &.page-before {

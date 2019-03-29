@@ -51,6 +51,7 @@
                     width: 229px;
                     height:50px;
                     margin-top: 30px;
+                    margin-left: 18px;
 
                     img {
                         width: 100%;
@@ -61,6 +62,7 @@
                 .header-nav {
                     float: right;
                     margin-top: 35px;
+                    margin-right: 18px;
 
                     ul {
                         overflow: hidden;
