@@ -23,18 +23,16 @@
 			</page>
 			<page :currentPage='currentPage'>
 				<div class="page-box">
-					<div class="animate move-left">
-						<div class="company-title">
-							<p class="title-cn">中信消费金融有限公司 > 公司大事记</p>
-							<p class="title-en">CITIC Consumer Finance Co.,Ltd. > Company Events</p>
-						</div>
-						<div class="company-content">
-							<ul>
-								<li class="comp-list" v-for=" (list,index) in compDevolpments" :key="index">
-									<page-company-devolp :compDev="list"></page-company-devolp>
-								</li>
-							</ul>
-						</div>
+					<div class="company-title">
+						<p class="title-cn">中信消费金融有限公司 > 公司大事记</p>
+						<p class="title-en">CITIC Consumer Finance Co.,Ltd. > Company Events</p>
+					</div>
+					<div class="company-content">
+						<ul>
+							<li class="comp-list" v-for=" (list,index) in compDevolpments" :key="index">
+								<page-company-devolp :compDev="list"></page-company-devolp>
+							</li>
+						</ul>
 					</div>
 				</div>
 				<div class="page-footer">
@@ -68,9 +66,7 @@
 					},{
 						background: require("~/assets/images/index/bg3.png"),
 						backgroundColor: 'rgba(242,242,242,0.85)',
-						showFooter: true,
-						afterEnter: this.afterEnterAnimate,
-        				beforeLeave: this.beforeLeaveAnimate
+						showFooter: true
 					}
 				],
 				controllerOption: {
@@ -189,8 +185,22 @@
 					typeof enterFunction === 'function' && enterFunction.call(this, this.$children[nextIndex]);
 				})
 			},
+			/** 
+			 * 可实现飞入飞出动画效果，需要此动画部分在data（）中的options需要添加的对象中传入，并且添加类名animate、move-left、move-right
+			 * 如下：
+			 * {
+						background: require("~/assets/images/index/bg3.png"),
+						backgroundColor: 'rgba(242,242,242,0.85)',
+						showFooter: true,
+						afterEnter: this.afterEnterAnimate,
+        				beforeLeave: this.beforeLeaveAnimate
+					}
+			*/
 			afterEnterAnimate($child) {
 				$child.$el.querySelector('.animate').classList.remove('move-left', 'move-right');
+				console.log($child);
+				console.log($child.$el.querySelector('.animate').classList);
+				
 			},
 			beforeLeaveAnimate($child) {
 				let moveType = Math.random() > 0.5 ? 'move-left' : 'move-right';
