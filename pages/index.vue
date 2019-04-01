@@ -336,4 +336,28 @@
 
 	}
 }
+
+@media screen and (max-width:1366px) {
+	.container {
+		.page-wrap {
+			.page-box {
+				padding-top: 160px;
+
+				.content{
+					padding-top: 80px;
+				}
+
+				.company-content {
+
+					ul {
+
+						.comp-list {
+							margin-top: 40px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
 </style>

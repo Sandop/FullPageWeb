@@ -30,6 +30,7 @@
     .header-wrap {
         overflow: hidden;
         width: 100%;
+        height: 110px;
         text-align: center;
 
         .header {
