@@ -1,33 +1,44 @@
 <template>
 	<section class="container">
 		<div class="page-wrap">
-			<page :currentPage='currentPage' :pageNum="pageNum">
-				<page-one></page-one>
-			</page>
-			<page :currentPage='currentPage' :pageNum="pageNum">
-				<div class="title">
-					<p class="title-cn">中信消费金融有限公司 > 股东简介</p>
-					<p class="title-en">CITIC Consumer Finance Co.,Ltd. > Shareholder introduction</p>
-				</div>
-				<div class="content">
-					<ul>
-						<li class="list" v-for=" (list,index) in pageTwoCons" :key="index">
-							<page-two-list :pageTwoCon="list"></page-two-list>
-						</li>
-					</ul>
+			<page :currentPage='currentPage'>
+				<div class="page-box">
+					<page-one></page-one>
 				</div>
 			</page>
-			<page :currentPage='currentPage' :pageNum="pageNum">
-				<div class="company-title">
-					<p class="title-cn">中信消费金融有限公司 > 公司大事记</p>
-					<p class="title-en">CITIC Consumer Finance Co.,Ltd. > Company Events</p>
+			<page :currentPage='currentPage'>
+				<div class="page-box">
+					<div class="title">
+						<p class="title-cn">中信消费金融有限公司 > 股东简介</p>
+						<p class="title-en">CITIC Consumer Finance Co.,Ltd. > Shareholder introduction</p>
+					</div>
+					<div class="content">
+						<ul>
+							<li class="list" v-for=" (list,index) in pageTwoCons" :key="index">
+								<page-two-list :pageTwoCon="list"></page-two-list>
+							</li>
+						</ul>
+					</div>
 				</div>
-				<div class="company-content">
-					<ul>
-						<li class="comp-list" v-for=" (list,index) in compDevolpments" :key="index">
-							<page-company-devolp :compDev="list"></page-company-devolp>
-						</li>
-					</ul>
+			</page>
+			<page :currentPage='currentPage'>
+				<div class="page-box">
+					<div class="animate move-left">
+						<div class="company-title">
+							<p class="title-cn">中信消费金融有限公司 > 公司大事记</p>
+							<p class="title-en">CITIC Consumer Finance Co.,Ltd. > Company Events</p>
+						</div>
+						<div class="company-content">
+							<ul>
+								<li class="comp-list" v-for=" (list,index) in compDevolpments" :key="index">
+									<page-company-devolp :compDev="list"></page-company-devolp>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="page-footer">
+					<v-footer></v-footer>
 				</div>
 			</page>
 			<page-controller :pageNum="pageNum" :currentPage="currentPage" @changePage="changePage" :option="controllerOption"></page-controller>
@@ -56,7 +67,10 @@
 						backgroundColor: 'rgba(147,58,58,0.9)'
 					},{
 						background: require("~/assets/images/index/bg3.png"),
-						backgroundColor: 'rgba(242,242,242,0.85)'
+						backgroundColor: 'rgba(242,242,242,0.85)',
+						showFooter: true,
+						afterEnter: this.afterEnterAnimate,
+        				beforeLeave: this.beforeLeaveAnimate
 					}
 				],
 				controllerOption: {
@@ -174,6 +188,13 @@
 				this.$nextTick(function() {
 					typeof enterFunction === 'function' && enterFunction.call(this, this.$children[nextIndex]);
 				})
+			},
+			afterEnterAnimate($child) {
+				$child.$el.querySelector('.animate').classList.remove('move-left', 'move-right');
+			},
+			beforeLeaveAnimate($child) {
+				let moveType = Math.random() > 0.5 ? 'move-left' : 'move-right';
+				$child.$el.querySelector('.animate').classList.add(moveType);
 			}
 		},
 	}
@@ -191,88 +212,118 @@
 		height: 100%;
 		margin: 0 auto;
 
-		.title {
-			width: 100%;
-			height: auto;
-			padding-left: 50px;
-			color: #fff;
-			text-align: left;
+		.page-box {
 
-			p.title-cn {
-				height: 37px;
-				font-size:26px;
-				font-family:PingFangSC-Semibold;
-				font-weight:600;
-				line-height:37px;
-			}
-
-			p.title-en {
-				height: 17px;
-				margin-top: 6px;
-				font-size:12px;
-				font-family:PingFangSC-Light;
-				font-weight:300;
-				line-height:17px;
-			}
-		}
-
-		.content {
-			width: 100%;
-			padding-top: 130px;
-
-			ul {
-				display: flex;
-				overflow: hidden;
+			overflow: hidden;
+			width: 1200px;
+			height: 100%;
+			margin: 0 auto;
+			padding-top: 250px;
+		
+			.title {
 				width: 100%;
-				justify-content: space-around;
+				height: auto;
+				padding-left: 50px;
+				color: #fff;
+				text-align: left;
 
-				.comp-list {
-					width: 352px;
+				p.title-cn {
+					height: 37px;
+					font-size:26px;
+					font-family:PingFangSC-Semibold;
+					font-weight:600;
+					line-height:37px;
+				}
+
+				p.title-en {
+					height: 17px;
+					margin-top: 6px;
+					font-size:12px;
+					font-family:PingFangSC-Light;
+					font-weight:300;
+					line-height:17px;
 				}
 			}
-		}
 
-		.company-title {
-			width: 100%;
-			height: auto;
-			padding-left: 10px;
-			color: rgba(52,52,52,1);;
-			text-align: left;
-
-			p.title-cn {
-				height: 37px;
-				font-size:26px;
-				font-family:PingFangSC-Semibold;
-				font-weight:600;
-				line-height:37px;
-			}
-
-			p.title-en {
-				height: 17px;
-				margin-top: 6px;
-				font-size:12px;
-				font-family:PingFangSC-Light;
-				font-weight:300;
-				line-height:17px;
-			}
-		}
-
-		.company-content {
-			width: 100%;
-			padding-left: 10px;
-
-			ul {
-				overflow: hidden;
+			.content {
 				width: 100%;
+				padding-top: 130px;
 
-				.comp-list {
-					float: left;
-					width: 352px;
-					margin-top: 80px;
-					margin-right: 42px;
+				ul {
+					display: flex;
+					overflow: hidden;
+					width: 100%;
+					justify-content: space-around;
+
+					.comp-list {
+						width: 352px;
+					}
 				}
 			}
+
+			.company-title {
+				width: 100%;
+				height: auto;
+				padding-left: 10px;
+				color: rgba(52,52,52,1);;
+				text-align: left;
+
+				p.title-cn {
+					height: 37px;
+					font-size:26px;
+					font-family:PingFangSC-Semibold;
+					font-weight:600;
+					line-height:37px;
+				}
+
+				p.title-en {
+					height: 17px;
+					margin-top: 6px;
+					font-size:12px;
+					font-family:PingFangSC-Light;
+					font-weight:300;
+					line-height:17px;
+				}
+			}
+
+			.company-content {
+				width: 100%;
+				padding-left: 10px;
+
+				ul {
+					overflow: hidden;
+					width: 100%;
+
+					.comp-list {
+						float: left;
+						width: 352px;
+						margin-top: 80px;
+						margin-right: 42px;
+					}
+				}
+			}
+
+			.animate {
+				transition: all 1s ease-out 0s;
+			}
+
+			.move-left {
+				transform: translateX(-1000%);
+			}
+
+			.move-right {
+				transform: translateX(1000%);
+			}
+
 		}
+
+		.page-footer {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			background: #fff;
+		}
+
 	}
 }
 </style>

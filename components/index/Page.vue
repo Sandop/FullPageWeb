@@ -5,24 +5,17 @@
                 'page-after': option.index > currentPage,
                 'page-current': option.index === currentPage}">
         <div class="page-box" :style="{background: option.backgroundColor}"   >
-            <div class="page-wrap">
-                <slot></slot>
-            </div>
-            <div class="page-footer"  v-if="currentPage ==  pageNum">
-                <v-footer></v-footer>
-            </div>
+            <slot></slot>
         </div>
     </section>
     <section class="page" v-else>页面正在渲染中。。。</section>
 </template>
 
 <script>
-  	import VFooter from '~/components/common/footer'
 
     export default {
         name: 'page',
         props: {
-            pageNum: Number,
             currentPage: Number
         },
         data (){
@@ -31,7 +24,6 @@
             }
         },
         components: {
-           VFooter 
         }
     }
 </script>
@@ -55,20 +47,6 @@
             width: 100%;
             height: 100%;
 
-            .page-wrap {
-                overflow: hidden;
-                width: 1200px;
-                height: 100%;
-                margin: 0 auto;
-                padding-top: 250px;
-            }
-
-            .page-footer {
-                position: absolute;
-                bottom: 0;
-                width: 100%;
-                background: #fff;
-            }
         }
         &.page-before {
             z-index: 0;
