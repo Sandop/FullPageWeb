@@ -65,8 +65,7 @@
 						backgroundColor: 'rgba(147,58,58,0.9)'
 					},{
 						background: require("~/assets/images/index/bg3.png"),
-						backgroundColor: 'rgba(242,242,242,0.85)',
-						showFooter: true
+						backgroundColor: 'rgba(242,242,242,0.85)'
 					}
 				],
 				controllerOption: {
@@ -191,7 +190,6 @@
 			 * {
 						background: require("~/assets/images/index/bg3.png"),
 						backgroundColor: 'rgba(242,242,242,0.85)',
-						showFooter: true,
 						afterEnter: this.afterEnterAnimate,
         				beforeLeave: this.beforeLeaveAnimate
 					}
