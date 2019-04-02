@@ -25,17 +25,13 @@
                     <div class="img">
                         <img src="~/assets/images/common/left_arr.png" alt="">
                     </div>
-                    <div class="word">
-                        返回首页
-                    </div>
+                    <div class="word">返回首页</div>
                 </nuxt-link>
                 <div class="refresh" @click="refresh">
                     <div class="img">
                         <img src="~/assets/images/common/refresh.png" alt="">
                     </div>
-                    <div class="word">
-                        返回首页
-                    </div>
+                    <div class="word">刷新</div>
                 </div>
             </div>
         </div>
