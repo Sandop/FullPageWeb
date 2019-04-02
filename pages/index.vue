@@ -144,6 +144,7 @@
 				]
 			}
 		},
+		layout: 'indexDefault',
 		computed: {
 			// 总page数
 			pageNum() {
