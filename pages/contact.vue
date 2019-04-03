@@ -31,13 +31,6 @@
 				}
 			}
 		},
-		head () {
-		  return {
-			script: [
-				{src:'http://api.map.baidu.com/api?v=2.0&ak=MDdqxkqhQzfdBzfu2tfGiidGbHgTfGrB'}
-			]
-		  }
-		},
 		components: {
 			CompanyAddress,
 			BaiduMap

@@ -17,6 +17,9 @@ export default {
 			{ hid: 'description', name: 'description', content: '中信消费金融' },
 		],
 		link: [
+			/** 
+			 * 静态打包需要将href: './favicon.ico';其余时候是href: '/favicon.ico'
+			*/
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
 		],
 		script: [
@@ -57,8 +60,11 @@ export default {
 	  prefetch: false
 	},
 	/*
-	** Build configuration
+	** 使用npm run generate打包静态页面修改相对路径需使用，使用npm run build打包或者npm run dev启动不需要配置这个
 	*/
+	// router: {
+	//     base: './'
+	// },
 	build: {
 		/**
 		 * 将查看源代码中的css采用外部引入方式

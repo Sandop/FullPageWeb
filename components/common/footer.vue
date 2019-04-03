@@ -15,7 +15,7 @@
            </div>
            <div class="footer-right">
                <ul>
-                   <li class="list">招贤纳士</li>
+                   <!-- <li class="list">招贤纳士</li> -->
                </ul>
            </div>
        </div>

@@ -394,25 +394,28 @@
 
 @media screen and (max-width:1366px) {
 	.container {
-		.page-wrap {
-			.page-box {
-				padding-top: 160px;
+		.swiper-container{
+			.swiper-slide {
+				.page-wrap {
+					.page-box {
+						padding-top: 160px;
 
-				.content{
-					padding-top: 80px;
-				}
+						.content{
+							padding-top: 80px;
+						}
+						.company-content {
 
-				.company-content {
-
-					ul {
-
-						.comp-list {
-							margin-top: 40px;
+							ul {
+								.comp-list {
+									margin-top: 40px;
+								}
+							}
 						}
 					}
 				}
 			}
 		}
+		
 	}
 }    
   // .my-swiper {
