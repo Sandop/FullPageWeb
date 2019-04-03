@@ -2,7 +2,7 @@
     <div class="address-wrap">
         <div class="address">
             <p class="name">中信消费金融有限公司</p>
-            <p>公司地址：北京市朝阳区新源南路6号京城大厦46层</p>
+            <p>公司地址：北京市朝阳区建国门外大街19号</p>
             <p>商务合作：wujing@citictrust.com.cn</p>
         </div>
         <div class="phone-wrap">

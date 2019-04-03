@@ -1,80 +1,109 @@
 <template>
-	<section class="container">
-		<div class="page-wrap">
-			<page :currentPage='currentPage'>
-				<div class="page-box">
-					<page-one></page-one>
-				</div>
-			</page>
-			<page :currentPage='currentPage'>
-				<div class="page-box">
-					<div class="title">
-						<p class="title-cn">中信消费金融有限公司 > 股东简介</p>
-						<p class="title-en">CITIC Consumer Finance Co.,Ltd. > Shareholder introduction</p>
+  <!-- You can find this swiper instance object in current component by the "mySwiper"  -->
+  <div class="container">
+    <div v-swiper:mySwiper="swiperOption">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" :style="'background-image:url(\''+background.bg1+'\')'" >
+                <div class="page-wrap"  :style="{background: backgroundColor.bgColor1}">
+                  <div class="page-box">
+                    <page-one></page-one>
+                  </div>
+                </div>
+            </div>
+            <div class="swiper-slide" :style="'background-image:url(\''+background.bg2+'\')'">
+                <div class="page-wrap"  :style="{background: backgroundColor.bgColor2}">
+					<div class="page-box">
+						<div class="title">
+							<p class="title-cn">中信消费金融有限公司 > 股东简介</p>
+							<p class="title-en">CITIC Consumer Finance Co.,Ltd. > Shareholder introduction</p>
+						</div>
+						<div class="content">
+							<ul>
+								<li class="list" v-for=" (list,index) in pageTwoCons" :key="index">
+									<page-two-list :pageTwoCon="list"></page-two-list>
+								</li>
+							</ul>
+						</div>
 					</div>
-					<div class="content">
-						<ul>
-							<li class="list" v-for=" (list,index) in pageTwoCons" :key="index">
-								<page-two-list :pageTwoCon="list"></page-two-list>
-							</li>
-						</ul>
+                </div>
+            </div>
+            <div class="swiper-slide" :style="'background-image:url(\''+background.bg3+'\')'">
+                <div class="page-wrap"  :style="{background: backgroundColor.bgColor3}">
+					<div class="page-box">
+						<div class="company-title">
+							<p class="title-cn">中信消费金融有限公司 > 公司大事记</p>
+							<p class="title-en">CITIC Consumer Finance Co.,Ltd. > Company Events</p>
+						</div>
+						<div class="company-content">
+							<ul>
+								<li class="comp-list" v-for=" (list,index) in compDevolpments" :key="index">
+									<page-company-devolp :compDev="list"></page-company-devolp>
+								</li>
+							</ul>
+						</div>
 					</div>
-				</div>
-			</page>
-			<page :currentPage='currentPage'>
-				<div class="page-box">
-					<div class="company-title">
-						<p class="title-cn">中信消费金融有限公司 > 公司大事记</p>
-						<p class="title-en">CITIC Consumer Finance Co.,Ltd. > Company Events</p>
+					<div class="page-footer">
+						<v-footer></v-footer>
 					</div>
-					<div class="company-content">
-						<ul>
-							<li class="comp-list" v-for=" (list,index) in compDevolpments" :key="index">
-								<page-company-devolp :compDev="list"></page-company-devolp>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="page-footer">
-					<v-footer></v-footer>
-				</div>
-			</page>
-			<page-controller :pageNum="pageNum" :currentPage="currentPage" @changePage="changePage" :option="controllerOption"></page-controller>
-		</div>
-	</section>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination swiper-pagination-bullets"></div>
+        <!-- <div class="swiper-button-prev"></div>左箭头 -->
+        <div class="swiper-button-next">
+			<img src="~/assets/images/index/next-btn.png">	
+		</div><!--右箭头-->
+    </div>
+  </div> 
 </template>
 
 <script>
-	import page from "~/components/index/Page"
-	import PageController from "~/components/index/PageController"
 	import PageOne from "~/components/index/PageOne"
 	import PageTwoList from "~/components/index/PageTwoList"
 	import PageCompanyDevolp from "~/components/index/PageCompanyDevolp"
-  	import VFooter from '~/components/common/footer'
-
+	import VFooter from '~/components/common/footer'
+	  
 	export default {
-		data (){
-			return {
-				currentPage: 1,
-				options: [
-					{
-						background: require("~/assets/images/index/bg1.png"),
-						backgroundColor: 'rgba(255,255,255,0)'
-					},{
-						background: require("~/assets/images/index/bg2.png"),
-						backgroundColor: 'rgba(147,58,58,0.9)'
-					},{
-						background: require("~/assets/images/index/bg3.png"),
-						backgroundColor: 'rgba(242,242,242,0.85)'
+		data () {
+			return {				
+				swiperOption: {
+					direction: 'vertical',
+					slidesPerView: 1,
+					spaceBetween: 30,
+					mousewheel: true,
+					pagination: {
+						el: '.swiper-pagination',
+						clickable: true,
+					},
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
+					on: {
+						slideChange() {
+							console.log('onSlideChangeEnd', this);
+						},
+						tap() {
+							console.log('onTap', this);
+						},
+						slideChangeTransitionEnd: function(){
+							if(this.isEnd){
+								this.navigation.$nextEl.css('display','none');
+							}else{
+								this.navigation.$nextEl.css('display','block');  
+							}
+						},
 					}
-				],
-				controllerOption: {
-					arrowsTypePre: false,
-					arrowsTypeNext: true,
-					arrowsType: false,
-					navbar: true,
-					highlight: true,
-					loop: false
+				},
+				background: {
+					bg1: require("~/assets/images/index/bg1.png"),
+					bg2: require("~/assets/images/index/bg2.png"),
+					bg3: require("~/assets/images/index/bg3.png")
+				},
+				backgroundColor: {
+					bgColor1: 'rgba(255,255,255,0)',
+					bgColor2: 'rgba(147,58,58,0.9)',
+					bgColor3: 'rgba(242,242,242,0.85)'
 				},
 				pageTwoCons: [
 					{
@@ -144,195 +173,222 @@
 				]
 			}
 		},
-		layout: 'indexDefault',
-		computed: {
-			// 总page数
-			pageNum() {
-				return this.options.length;
-			}
+		mounted() {
+		//   console.log('app init', this)
+		//   setTimeout(() => {
+		//     this.banners.push('/5.jpg')
+		//     console.log('banners update')
+		//   }, 3000)
+		//   console.log(
+		//     'This is current swiper instance object', this.mySwiper, 
+		//     'I will slideTo banners 3')
+		//    this.mySwiper.slideTo(3)
 		},
+		layout: 'indexDefault',
 		components: {
-			page,
-			PageController,
 			PageOne,
 			PageTwoList,
 			PageCompanyDevolp,
 			VFooter
 		},
-		mounted() {
-			this.$children.forEach((child, index) => {
-				// 动态设置各个page内的options
-				if (child.option === null) {
-					let childOption = this.options[index];
-					this.$set(childOption, 'index', index + 1);
-					child.option = childOption;
-				}
-			});
-		},
-		methods: {
-			changePage(index) {
-				// beforeLeave Hook
-				let beforeIndex = this.currentPage - 1;
-				let leaveFunction = this.options[beforeIndex].beforeLeave;
-				
-				typeof leaveFunction === 'function' && leaveFunction.call(this, this.$children[beforeIndex]);
-				// change page
-				this.currentPage = index;
-				// afterEnter Hook
-				let nextIndex = index - 1;
-				let enterFunction = this.options[nextIndex].afterEnter;
-				this.$nextTick(function() {
-					typeof enterFunction === 'function' && enterFunction.call(this, this.$children[nextIndex]);
-				})
-			},
-			/** 
-			 * 可实现飞入飞出动画效果，需要此动画部分在data（）中的options需要添加的对象中传入，并且添加类名animate、move-left、move-right
-			 * 如下：
-			 * {
-						background: require("~/assets/images/index/bg3.png"),
-						backgroundColor: 'rgba(242,242,242,0.85)',
-						afterEnter: this.afterEnterAnimate,
-        				beforeLeave: this.beforeLeaveAnimate
-					}
-			*/
-			afterEnterAnimate($child) {
-				$child.$el.querySelector('.animate').classList.remove('move-left', 'move-right');
-				console.log($child);
-				console.log($child.$el.querySelector('.animate').classList);
-				
-			},
-			beforeLeaveAnimate($child) {
-				let moveType = Math.random() > 0.5 ? 'move-left' : 'move-right';
-				$child.$el.querySelector('.animate').classList.add(moveType);
-			}
-		},
 	}
 </script>
 
+
 <style lang="scss" scoped>
+
 .container {
-	overflow: hidden;
 	width: 100%;
 	height: 100%;
+	margin-top: -110px;
 
-	.page-wrap {
-		position: relative;
-		width: 1200px;
+	.swiper-container {
+		width: 100%;
 		height: 100%;
-		margin: 0 auto;
+		margin-left: auto;
+		margin-right: auto;
 
-		.page-box {
-
-			overflow: hidden;
-			width: 1200px;
-			height: 100%;
-			margin: 0 auto;
-			padding-top: 250px;
-		
-			.title {
-				width: 100%;
-				height: auto;
-				padding-left: 50px;
-				color: #fff;
-				text-align: left;
-
-				p.title-cn {
-					height: 37px;
-					font-size:26px;
-					font-family:PingFangSC-Semibold;
-					font-weight:600;
-					line-height:37px;
-				}
-
-				p.title-en {
-					height: 17px;
-					margin-top: 6px;
-					font-size:12px;
-					font-family:PingFangSC-Light;
-					font-weight:300;
-					line-height:17px;
-				}
-			}
-
-			.content {
-				width: 100%;
-				padding-top: 130px;
-
-				ul {
-					display: flex;
-					overflow: hidden;
-					width: 100%;
-					justify-content: space-around;
-
-					.comp-list {
-						width: 352px;
-					}
-				}
-			}
-
-			.company-title {
-				width: 100%;
-				height: auto;
-				padding-left: 10px;
-				color: rgba(52,52,52,1);;
-				text-align: left;
-
-				p.title-cn {
-					height: 37px;
-					font-size:26px;
-					font-family:PingFangSC-Semibold;
-					font-weight:600;
-					line-height:37px;
-				}
-
-				p.title-en {
-					height: 17px;
-					margin-top: 6px;
-					font-size:12px;
-					font-family:PingFangSC-Light;
-					font-weight:300;
-					line-height:17px;
-				}
-			}
-
-			.company-content {
-				width: 100%;
-				padding-left: 10px;
-
-				ul {
-					overflow: hidden;
-					width: 100%;
-
-					.comp-list {
-						float: left;
-						width: 352px;
-						margin-top: 80px;
-						margin-right: 42px;
-					}
-				}
-			}
-
-			.animate {
-				transition: all 1s ease-out 0s;
-			}
-
-			.move-left {
-				transform: translateX(-1000%);
-			}
-
-			.move-right {
-				transform: translateX(1000%);
-			}
-
-		}
-
-		.page-footer {
-			position: absolute;
-			bottom: 0;
-			width: 100%;
+		.swiper-slide {
+			text-align: center;
+			font-size: 18px;
 			background: #fff;
-		}
+			/* Center slide text vertically */
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			-webkit-justify-content: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			-webkit-align-items: center;
+			align-items: center;
+			background-position: center;
+			background-repeat: no-repeat;
+			transition: all 0.5s ease 0s;
 
+			.page-wrap {
+				overflow: hidden;
+				width: 100%;
+				height: 100%;
+
+				.page-box {
+					overflow: hidden;
+					width: 1200px;
+					height: 100%;
+					margin: 0 auto;
+					padding-top: 250px;
+
+					.title {
+						width: 100%;
+						height: auto;
+						padding-left: 50px;
+						color: #fff;
+						text-align: left;
+
+						p.title-cn {
+							height: 37px;
+							font-size:26px;
+							font-family:PingFangSC-Semibold;
+							font-weight:600;
+							line-height:37px;
+						}
+
+						p.title-en {
+							height: 17px;
+							margin-top: 6px;
+							font-size:12px;
+							font-family:PingFangSC-Light;
+							font-weight:300;
+							line-height:17px;
+						}
+					}
+
+					.content {
+						width: 100%;
+						padding-top: 130px;
+
+						ul {
+							display: flex;
+							overflow: hidden;
+							width: 100%;
+							justify-content: space-around;
+
+							.comp-list {
+								width: 352px;
+							}
+						}
+					}
+
+					.company-title {
+						width: 100%;
+						height: auto;
+						padding-left: 10px;
+						color: rgba(52,52,52,1);;
+						text-align: left;
+
+						p.title-cn {
+							height: 37px;
+							font-size:26px;
+							font-family:PingFangSC-Semibold;
+							font-weight:600;
+							line-height:37px;
+						}
+
+						p.title-en {
+							height: 17px;
+							margin-top: 6px;
+							font-size:12px;
+							font-family:PingFangSC-Light;
+							font-weight:300;
+							line-height:17px;
+						}
+					}
+
+					.company-content {
+						width: 100%;
+						padding-left: 10px;
+
+						ul {
+							overflow: hidden;
+							width: 100%;
+
+							.comp-list {
+								float: left;
+								width: 352px;
+								margin-top: 80px;
+								margin-right: 42px;
+							}
+						}
+					}
+				}
+
+				.page-footer {
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					background: #fff;
+				}
+			}
+		} 
+
+		.swiper-pagination {
+			right: 25px;
+
+			> .swiper-pagination-bullet {
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				margin-top: 16px;
+				cursor: pointer;
+			}
+		}
+		
+		.swiper-button-next {
+			top: auto;
+			right: 50%;
+			bottom: 65px;
+			transform: translateX(50%);
+			width: 26px;
+			height: 28px;
+			background: none;
+
+		}
+		.swiper-pagination-bullet {
+			width: 8px;
+			height: 8px;
+			display: inline-block;
+			background:rgba(255,255,255,1);
+			box-shadow:0px 0px 4px 0px rgba(0,0,0,0.2);
+			border-radius:6px;
+		}
+		button.swiper-pagination-bullet {
+			border: none;
+			margin: 0;
+			padding: 0;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+		}
+		.swiper-pagination-clickable .swiper-pagination-bullet {
+			cursor: pointer;
+			transition:all 0.3s ease-in;
+			-webkit-transition:all 0.3s ease-in;
+			-moz-transition:all 0.3s ease-in;
+			-ms-transition:all 0.3s ease-in;
+			-o-transition:all 0.3s ease-in;
+		}
+		.swiper-pagination-bullet-active {
+			width:8px;
+			height:36px;
+			background:rgba(255,255,255,1);
+			box-shadow:0px 0px 4px 0px rgba(0,0,0,0.2);
+			border-radius:6px;
+		}
 	}
 }
 
@@ -358,5 +414,23 @@
 			}
 		}
 	}
-}
+}    
+  // .my-swiper {
+  //   height: 300px;
+  //   width: 100%;
+  //   .swiper-slide {
+  //     text-align: center;
+  //     font-size: 38px;
+  //     font-weight: 700;
+  //     background-color: #eee;
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: center;
+  //   }
+  //   .swiper-pagination {
+  //     > .swiper-pagination-bullet {
+  //       background-color: red;
+  //     }
+  //   }
+  // }
 </style>

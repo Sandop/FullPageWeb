@@ -83,6 +83,7 @@ export default {
             font-weight:300;
             line-height:20px;
             letter-spacing:2px;
+            text-align: left;
         }
     }
 </style>

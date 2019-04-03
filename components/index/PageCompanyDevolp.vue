@@ -49,6 +49,7 @@ export default {
             overflow: hidden;
             width: 273px;
             padding-left: 25px;
+            text-align: left;
 
             .time {
                 overflow: hidden;

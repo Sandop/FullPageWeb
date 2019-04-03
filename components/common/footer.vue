@@ -1,7 +1,7 @@
 <template>
     <div class="footer-wrap">
        <div class="footer">
-           <div class="footer-lefe">
+           <div class="footer-left">
                <div class="company-name">
                    <div class="company-cn">中信消费金融有限公司</div>
                    <div class="company-en">CITIC Consumer Finance Co., Ltd.</div>
@@ -16,7 +16,6 @@
            <div class="footer-right">
                <ul>
                    <li class="list">招贤纳士</li>
-                   <li class="list">法律声明</li>
                </ul>
            </div>
        </div>
@@ -43,9 +42,10 @@
             height: 100%;
             margin: 0 auto;
 
-            .footer-lefe {
+            .footer-left {
                 float: left;
                 margin-left: 18px;
+                text-align: left;
 
                 .company-name {
                     padding-top: 51px;
