@@ -268,7 +268,7 @@
 
 					.content {
 						width: 100%;
-						padding-top: 130px;
+						padding-top: 100px;
 
 						ul {
 							display: flex;
@@ -318,7 +318,7 @@
 							.comp-list {
 								float: left;
 								width: 352px;
-								margin-top: 80px;
+								margin-top: 50px;
 								margin-right: 42px;
 							}
 						}

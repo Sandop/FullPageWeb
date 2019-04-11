@@ -28,7 +28,7 @@
 		background:#fff;
 		color:#000;
 		font-size:14px;
-		font-family: 'Microsoft yahei',Verdana, Arial, Helvetica, sans-serif;
+		font-family: PingFang SC,helvetica neue,hiragino sans gb,'microsoft yahei',sans-serif;
 	}
 	*,
 	*:before,

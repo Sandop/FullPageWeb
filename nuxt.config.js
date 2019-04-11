@@ -20,7 +20,7 @@ export default {
 			/** 
 			 * 静态打包需要将href: './favicon.ico';其余时候是href: '/favicon.ico'
 			*/
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+			{ rel: 'icon', type: 'image/x-icon', href: './favicon.ico' }
 		],
 		script: [
 			{src: 'http://api.map.baidu.com/api?v=2.0&ak=MDdqxkqhQzfdBzfu2tfGiidGbHgTfGrB'}
@@ -54,7 +54,7 @@ export default {
 	modules: [
 	],
 	//设置缓存
-	cache: true,
+	// cache: true,
 	//禁止预加载效果
 	performance: {
 	  prefetch: false
@@ -62,9 +62,9 @@ export default {
 	/*
 	** 使用npm run generate打包静态页面修改相对路径需使用，使用npm run build打包或者npm run dev启动不需要配置这个
 	*/
-	// router: {
-	//     base: './'
-	// },
+	router: {
+	    base: './'
+	},
 	build: {
 		/**
 		 * 将查看源代码中的css采用外部引入方式
