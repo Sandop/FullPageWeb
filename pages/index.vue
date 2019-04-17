@@ -21,7 +21,7 @@
 							<ul>
 								<li class="list" v-for=" (list,index) in pageTwoCons" :key="index">
 									<page-two-list :pageTwoCon="list"></page-two-list>
-								</li>
+								</li>11
 							</ul>
 						</div>
 					</div>
