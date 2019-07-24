@@ -62,9 +62,9 @@ export default {
 	/*
 	** 使用npm run generate打包静态页面修改相对路径需使用，使用npm run build打包或者npm run dev启动不需要配置这个
 	*/
-	// router: {
-	//     base: './'
-	// },
+	router: {
+	    base: './'
+	},
 	build: {
 		/**
 		 * 将查看源代码中的css采用外部引入方式

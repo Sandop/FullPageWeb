@@ -12,12 +12,16 @@
 				</div>
 			</div>
 		</div>
+		<div class="page-footer">
+			<v-footer></v-footer>
+		</div>
 	</section>
 </template>
 
 <script>
 	import CompanyAddress from '~/components/contact/CompanyAddress'
 	import BaiduMap from '~/components/contact/BaiduMap'
+	import VFooter from '~/components/common/footer'
 
     export default {
         data() {
@@ -31,18 +35,22 @@
 				}
 			}
 		},
+		layout: 'indexDefault',
 		components: {
 			CompanyAddress,
-			BaiduMap
+			BaiduMap,
+			VFooter
 		}
     }
 </script>
 
 <style lang="scss" scoped>
 	.wrap {
+		position: relative;
+		top: -110px;
 		overflow: hidden;
 		width: 100%;
-		height: auto;
+		height: 100%;
 		background-position: center;
 		background-repeat: no-repeat;
 		
@@ -53,20 +61,19 @@
 			.contact-content {
 				overflow: hidden;
 				width: 1200px;
-				height: 806px;
 				margin: 0 auto;
 				padding-left: 146px;
 				
 				.address-box {
 					overflow: hidden;
 					width: 100%;
-					height: 292px;
-					padding-top: 153px;
+					padding-top: 210px;
 				}
 
 				.map-wrap {
 					width: 703px;
 					height: 323px;
+					margin-top: 50px;
 					background: #fff;
 
 					.map-box {
@@ -79,6 +86,26 @@
 
 		}
 		
+		.page-footer {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 164px;
+			background: #fff;
+		}
 	}
-	
+	@media screen and (max-width:1366px) {
+		.wrap {
+			.content-box {
+				.contact-content {
+					.address-box {
+						padding-top: 120px;
+					}
+					.map-wrap {
+						margin-top: 50px;
+					}
+				}
+			}
+		}
+	}	
 </style>
