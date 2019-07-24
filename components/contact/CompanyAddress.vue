@@ -2,8 +2,8 @@
     <div class="address-wrap">
         <div class="address">
             <p class="name">中信消费金融有限公司</p>
-            <p>公司地址：北京市朝阳区建国门外大街19号</p>
-            <p>商务合作：wujing@citictrust.com.cn</p>
+            <p>公司地址：北京市朝阳区建国门外大街19号国际大厦A座2层</p>
+            <p>商务合作：wujing@eciticcfc.com</p>
         </div>
         <div class="phone-wrap">
             <p class="title">客服联系信息</p>
@@ -23,9 +23,8 @@ export default {
         overflow: hidden;
         width: 100%;
         height: 100%;
-        color:rgba(52,52,52,1);
+        color:#fff;
         font-size:16px;
-        font-family:PingFangSC-Regular;
         font-weight:400;
 
         .address {

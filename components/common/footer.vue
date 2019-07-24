@@ -53,7 +53,6 @@
                     .company-cn {
                         height:22px;
                         font-size:16px;
-                        font-family:PingFangSC-Semibold;
                         font-weight:600;
                         line-height:22px;
                     }
@@ -61,7 +60,6 @@
                         height:14px;
                         margin-top: 2px;
                         font-size:10px;
-                        font-family:PingFangSC-Regular;
                         font-weight:400;
                         line-height:14px;
                     }
@@ -78,7 +76,6 @@
                             height:14px;
                             margin-right: 34px;
                             font-size:10px;
-                            font-family:PingFangSC-Regular;
                             font-weight:400;
                             line-height:14px;
                         }
@@ -99,7 +96,6 @@
                         height:100%;
                         margin-left: 55px;
                         font-size:14px;
-                        font-family:PingFangSC-Regular;
                         font-weight:400;
                         line-height:164px;
                     }

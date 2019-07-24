@@ -22,7 +22,7 @@
     export default {
         data() {
 			return {
-				bgImg: require("~/assets/images/index/bg1.png"),
+				bgImg: require("~/assets/images/index/bg4.png"),
 				mapData: {
 					longitude:  116.448233,
 					latitude: 39.915217,
@@ -48,7 +48,7 @@
 		
 		.content-box {
 			width: 100%;
-			background: rgba(235, 237, 240, 0.8);
+			background: linear-gradient(180deg,rgba(0,0,0,0.3) 0%,rgba(216,216,216,0) 100%);
 
 			.contact-content {
 				overflow: hidden;

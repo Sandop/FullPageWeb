@@ -78,13 +78,11 @@
                             a {
                                 position: relative;
                                 font-size: 14px;
-                                font-family:PingFangSC-Regular;
                                 font-weight:400;
                                 color:rgba(54,54,54,1);
 
                                 &.nuxt-link-exact-active {
                                     font-size: 18px;
-                                    font-family:PingFangSC-Semibold;
                                     font-weight:600;
 
                                     &:after {

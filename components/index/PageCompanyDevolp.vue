@@ -35,10 +35,9 @@ export default {
             overflow: hidden;
             width:20px;
             height:20px;
-            background:rgba(154,71,69,1);
-            color: #fff;
+            background:#fff;
+            color: rgba(154,71,69,1);
             font-size:10px;
-            font-family:PingFangSC-Semibold;
             font-weight:600;
             line-height: 20px;
             text-align: center;
@@ -49,6 +48,7 @@ export default {
             overflow: hidden;
             width: 273px;
             padding-left: 25px;
+            color: #fff;
             text-align: left;
 
             .time {
@@ -56,7 +56,6 @@ export default {
                 width: 100%;
                 height:20px;
                 font-size:14px;
-                font-family:PingFangSC-Regular;
                 font-weight:400;
                 line-height:20px;
                 letter-spacing:2px;
@@ -67,7 +66,6 @@ export default {
                 height:22px;
                 margin-top: 8px;
                 font-size:16px;
-                font-family:PingFangSC-Semibold;
                 font-weight:600;
                 line-height:22px;
                 letter-spacing:3px;
@@ -75,10 +73,9 @@ export default {
             .desc {
                 overflow: hidden;
                 width: 100%;
-                height: 97px;
+                min-height: 63px;
                 margin-top: 12px;
                 font-size:14px;
-                font-family:PingFangSC-Light;
                 font-weight:300;
                 line-height:20px;
                 letter-spacing:2px;
@@ -98,7 +95,7 @@ export default {
                 left: -10px;
                 width: 18px;
                 height: 18px;
-                border: rgba(154, 71, 69, 0.7) 1px solid;
+                border: rgba(247, 247, 247, 0.7) 1px solid;
                 transform: rotate(-45deg);
                 border-top: transparent;
                 border-left: transparent;
@@ -109,7 +106,7 @@ export default {
                 left: -1px;
                 width: 18px;
                 height: 18px;
-                border: rgba(154, 71, 69, 0.4) 1px solid;
+                border: rgba(253, 250, 250, 0.4) 1px solid;
                 transform: rotate(-45deg);
                 border-top: transparent;
                 border-left: transparent;

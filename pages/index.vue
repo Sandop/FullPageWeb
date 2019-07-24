@@ -101,9 +101,9 @@
 					bg3: require("~/assets/images/index/bg3.png")
 				},
 				backgroundColor: {
-					bgColor1: 'rgba(255,255,255,0)',
-					bgColor2: 'rgba(147,58,58,0.9)',
-					bgColor3: 'rgba(242,242,242,0.85)'
+					bgColor1: 'linear-gradient(180deg,rgba(0,0,0,0.2) 0%,rgba(216,216,216,0) 100%)',
+					bgColor2: 'linear-gradient(180deg,rgba(0,0,0,0.3) 0%,rgba(216,216,216,0) 100%)',
+					bgColor3: 'linear-gradient(180deg,rgba(0,0,0,0.3) 0%,rgba(216,216,216,0) 100%)'
 				},
 				pageTwoCons: [
 					{
@@ -111,26 +111,26 @@
 						titleCn: '中信集团',
 						titleEn: 'CITIC Group',
 						content: [
-							'中国中信集团有限公司是在邓小平同志支持下，由荣毅仁同志于1979年创办的；',
-							'中信集团现已发展成为一家国有大型综合性跨国企业集团，业务涉及金融、资源能源、制造、工程承包、房地产和其他领域；',
-							'2018年中信集团连续第10年上榜美国《财富》杂志世界500强，位居第149位'
+							'中国中信集团有限公司是在邓小平同志支持下，由荣毅仁同志于1979年创办的。',
+							'中信集团现已发展成为一家国有大型综合性跨国企业集团，业务涉及金融、资源能源、制造、工程承包、房地产和其他领域。',
+							'2019年中信集团连续第11年上榜美国《财富》杂志世界500强，位居第137位。'
 						]
 					},{
 						img: require("~/assets/images/index/page2-2.png"),
 						titleCn: '中信信托',
 						titleEn: 'CITIC Trust',
 						content: [
-							'中信信托有限责任公司是中国银行业监督管理委员会监管的全国性非银行金融机构，获评中国信托公司行业最高评级，为中信集团系统重要性成员企业；',
-							'中信信托同时担任中国信托业协会会长单位、中国信托业保障基金理事长单位、中国信托登记有限责任公司股东；',
-							'2018年，中信信托服务投资者数量超过15万，管理资产规模近2亿元，稳居信托第一梯队'
+							'中信信托有限责任公司是中国银行业监督管理委员会监管的全国性非银行金融机构，获评中国信托公司行业最高评级，为中信集团系统重要性成员企业。',
+							'中信信托同时担任中国信托业协会会长单位、中国信托业保障基金理事长单位、中国信托登记有限责任公司股东。',
+							'2018年，中信信托服务投资者数量超过15万，管理资产规模近2亿元，稳居信托第一梯队。'
 						]
 					},{
 						img: require("~/assets/images/index/page2-3.png"),
-						titleCn: '金蝶国际',
+						titleCn: '金蝶软件',
 						titleEn: 'Kingdee',
 						content: [
-							'金蝶国际软件集团始创于1993年，是香港联交所主板上市公司（股票代码：0268），已为超过680万家企业和政府组织提供企业管理软件及云服务，致力于改变亿万人的工作方式； ',
-							'金蝶用户已超过2.6亿，超过2000家合作伙伴，连续14年位居中国成长型企业市场占有率第一，成为连续两年在中国企业级SaaS云服务领域超越国际厂商的软件公司'
+							'金蝶国际软件集团始创于1993年，是香港联交所主板上市公司（股票代码：0268），已为超过680万家企业和政府组织提供企业管理软件及云服务，致力于改变亿万人的工作方式。 ',
+							'金蝶用户已超过2.6亿，超过2000家合作伙伴，连续14年位居中国成长型企业市场占有率第一，成为连续两年在中国企业级SaaS云服务领域超越国际厂商的软件公司。'
 						]
 					}
 				],
@@ -139,35 +139,55 @@
 						num: '01',
 						time: '2017年03月27日',
 						title: '公司筹备启动',
-						desc: '中信消费金融公司筹备设立工作自2017年03月27日开始启动，成立筹备领导小组和消金公司筹备组',
+						desc: '筹备设立工作自2017年03月27日开始启动，成立筹备领导小组和消金公司筹备组',
 						arrow: true
-					},
-					{
+					},{
 						num: '02',
 						time: '2017年08月17日',
 						title: '公司获批筹建',
-						desc: '2018年08月17日，中信消金取得中国银监会筹建批复，成为我国第26家获准筹建的消费金融公司',
+						desc: '取得中国银监会筹建批复，成为我国第26家获准筹建的消费金融公司',
 						arrow: true
-					},
-					{
+					},{
 						num: '03',
 						time: '2019年01月08日',
 						title: '公司创立',
-						desc: '公司创立大会胜利召开，完成“三会一层”组建工作',
-						arrow: true
-					},
-					{
+						desc: '召开股东大会，完成“三会一层”组建工作',
+						arrow: false	
+					},{
 						num: '04',
-						time: '2019年04月17日',
+						time: '2019年06月05日',
 						title: '获得开业批复',
-						desc: '2019年04月17日，中信消金取得中国银保监会开业批复',
+						desc: '召开股东大会，完成“三会一层”组建工作',
 						arrow: true
-					},
-					{
+					},{
 						num: '05',
-						time: '2019年06月01日',
-						title: '公司正式开业',
-						desc: '2019年06月01日，中信消费金融有限公司正式开业',
+						time: '2019年06月11日',
+						title: '获得金融许可证',
+						desc: '正式获得金融许可证',
+						arrow: true
+					},{
+						num: '06',
+						time: '2019年06月12日',
+						title: '公司正式成立',
+						desc: '正式获得营业执照，可以正式对外开展各项经营活动',
+						arrow: false
+					},{
+						num: '07',
+						time: '2019年06月28日',
+						title: '首笔交易',
+						desc: '成功发放第一笔个人消费贷款',
+						arrow: true
+					},{
+						num: '08',
+						time: '2019年07月14日',
+						title: '贷款总额度破1亿元',
+						desc: '累积发放贷款总量超过1亿元',
+						arrow: true
+					},{
+						num: '09',
+						time: '2019年07月26日',
+						title: '正式对外开业发布业务',
+						desc: '正式对外宣布开业并发布各项业务',
 						arrow: false
 					}
 				]
@@ -230,6 +250,7 @@
 			transition: all 0.5s ease 0s;
 
 			.page-wrap {
+				position: relative;
 				overflow: hidden;
 				width: 100%;
 				height: 100%;
@@ -251,7 +272,6 @@
 						p.title-cn {
 							height: 37px;
 							font-size:26px;
-							font-family:PingFangSC-Semibold;
 							font-weight:600;
 							line-height:37px;
 						}
@@ -260,7 +280,6 @@
 							height: 17px;
 							margin-top: 6px;
 							font-size:12px;
-							font-family:PingFangSC-Light;
 							font-weight:300;
 							line-height:17px;
 						}
@@ -286,13 +305,12 @@
 						width: 100%;
 						height: auto;
 						padding-left: 10px;
-						color: rgba(52,52,52,1);;
+						color: #fff;
 						text-align: left;
 
 						p.title-cn {
 							height: 37px;
 							font-size:26px;
-							font-family:PingFangSC-Semibold;
 							font-weight:600;
 							line-height:37px;
 						}
@@ -301,7 +319,6 @@
 							height: 17px;
 							margin-top: 6px;
 							font-size:12px;
-							font-family:PingFangSC-Light;
 							font-weight:300;
 							line-height:17px;
 						}
@@ -330,6 +347,11 @@
 					bottom: 0;
 					width: 100%;
 					background: #fff;
+				}
+			}
+			&:last-child .page-wrap {
+				.page-box {
+					padding-top: 190px;
 				}
 			}
 		} 
@@ -407,10 +429,15 @@
 
 							ul {
 								.comp-list {
-									margin-top: 40px;
+									margin-top: 10px;
 								}
 							}
 						}
+					}
+				}
+				&:last-child .page-wrap {
+					.page-box {
+						padding-top: 130px;
 					}
 				}
 			}

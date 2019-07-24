@@ -103,7 +103,6 @@
 
             .desc {
                 color:rgba(147,147,147,1);
-                font-family:PingFangSC-Regular;
                 font-weight:400;
                 text-align: center;
 
@@ -154,7 +153,6 @@
 
                     .word {
                         font-size:20px;
-                        font-family:PingFangSC-Regular;
                         font-weight:400;
                         color:rgba(153,71,70,1);
                         line-height:26px;

@@ -20,7 +20,7 @@ export default {
 			/** 
 			 * 静态打包需要将href: './favicon.ico';其余时候是href: '/favicon.ico'
 			*/
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+			{ rel: 'icon', type: 'image/x-icon', href: './favicon.ico' }
 		],
 		script: [
 			{src: 'http://api.map.baidu.com/api?v=2.0&ak=MDdqxkqhQzfdBzfu2tfGiidGbHgTfGrB'}
@@ -72,6 +72,19 @@ export default {
 		extractCSS: {
 			allChunks: true
 		},
+		// optimization: {
+		// 	minimize: true,
+		// 	minimizer: [
+		// 	  // terser-webpack-plugin
+		// 	  // optimize-css-assets-webpack-plugin
+		// 	],
+		// 	splitChunks: {
+		// 	  chunks: 'all',
+		// 	  automaticNameDelimiter: '.',
+		// 	  name: undefined,
+		// 	  cacheGroups: {}
+		// 	}
+		// },
 		vender: ['axios'],
 		extend (config, { isDev, isClient }) {
 			

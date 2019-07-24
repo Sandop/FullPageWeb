@@ -61,7 +61,6 @@ export default {
             .title-cn {
                 height:22px;
                 font-size:16px;
-                font-family:PingFangSC-Semibold;
                 font-weight:600;
                 line-height:22px;
             }
@@ -69,7 +68,6 @@ export default {
                 height: 17px;
                 margin-top: 2px; 
                 font-size: 12px;
-                font-family: PingFangSC-Light;
                 font-weight: 300;
                 line-height: 17px;
             }
@@ -79,7 +77,6 @@ export default {
             width: 100%;
             height: auto;
             font-size:14px;
-            font-family:PingFangSC-Light;
             font-weight:300;
             line-height:20px;
             letter-spacing:2px;
