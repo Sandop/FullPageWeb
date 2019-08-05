@@ -83,7 +83,6 @@
 					}
 				}
 			}
-
 		}
 		
 		.page-footer {
@@ -102,9 +101,12 @@
 						padding-top: 120px;
 					}
 					.map-wrap {
-						margin-top: 50px;
+						margin-top: 22px;
 					}
 				}
+			}
+			.page-footer {
+				height: 88px;
 			}
 		}
 	}	

@@ -8,8 +8,8 @@
                </div>
                <div class="footer-copy">
                    <ul>
-                       <li class="list">京ICP备 15019090号</li>
-                       <li class="list">京公网安备 44030502001114号</li>
+                       <li class="list">京ICP备 1902994号-1</li>
+                       <!-- <li class="list">京公网安备 44030502001114号</li> -->
                    </ul>
                </div>
            </div>
@@ -103,4 +103,20 @@
             }
         }
     }
+
+    @media screen and (max-width:1366px) {
+        .footer-wrap {
+            height: 88px;
+
+            .footer {
+
+                .footer-left {
+
+                    .company-name {
+                        padding-top: 15px;
+                    }
+                }
+            }
+        }
+    }    
 </style>
