@@ -101,6 +101,8 @@
 						padding-top: 120px;
 					}
 					.map-wrap {
+						width: 570px;
+						height: 290px;
 						margin-top: 22px;
 					}
 				}
