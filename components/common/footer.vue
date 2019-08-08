@@ -8,8 +8,12 @@
                </div>
                <div class="footer-copy">
                    <ul>
-                       <li class="list">京ICP备 1902994号-1</li>
-                       <!-- <li class="list">京公网安备 44030502001114号</li> -->
+                       <li class="list">
+                           京ICP备 1902994号-1
+                        </li>
+                       <li class="list">
+                           <i class="list-icon">京公网安备 11010502038516号</i>
+                        </li>
                    </ul>
                </div>
            </div>
@@ -73,11 +77,20 @@
 
                         .list {
                             float: left;
-                            height:14px;
+                            height:20px;
                             margin-right: 34px;
                             font-size:10px;
                             font-weight:400;
-                            line-height:14px;
+                            line-height:20px;
+
+                            .list-icon {
+                                display: inline-block;
+                                overflow: hidden;
+                                height: 20px;
+                                padding-left: 32px;
+                                background: url(../../assets/images/common/f-icon.png) left center no-repeat;
+                                font-style: normal;
+                            }
                         }
                     }
                 }

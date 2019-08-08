@@ -7,7 +7,7 @@
         </div>
         <div class="phone-wrap">
             <p class="title">客服联系信息</p>
-            <p>客服热线：010 - 65995558（8:30 - 17:30）</p>
+            <p>客服热线：010 - 65995558（9:00 - 18:00）</p>
         </div>
     </div>
 </template>
