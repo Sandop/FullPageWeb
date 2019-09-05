@@ -8,11 +8,12 @@
                </div>
                <div class="footer-copy">
                    <ul>
-                       <li class="list">
-                           京ICP备 1902994号-1
+                        <li class="list">
+                           <img src="~/assets/images/common/f-icon.png" class="list-icon">
+                           <i class="list-word">京公网安备 11010502038516号</i>
                         </li>
                        <li class="list">
-                           <i class="list-icon">京公网安备 11010502038516号</i>
+                           京ICP备 1902994号-1
                         </li>
                    </ul>
                </div>
@@ -28,7 +29,12 @@
 
 <script>
     export default {
-        name: 'VFooter' 
+        name: 'VFooter',
+        data() {
+			return {
+				fIcon: require("~/assets/images/common/f-icon.png")
+			}
+		},
     }
 </script>
 
@@ -86,9 +92,13 @@
                             .list-icon {
                                 display: inline-block;
                                 overflow: hidden;
+                                width: 20px;
                                 height: 20px;
-                                padding-left: 32px;
-                                background: url(../../assets/images/common/f-icon.png) left center no-repeat;
+                            }
+                            .list-word {
+                                display: inline-block;
+                                overflow: hidden;
+                                height: 20px;
                                 font-style: normal;
                             }
                         }

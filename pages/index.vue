@@ -5,9 +5,18 @@
         <div class="swiper-wrapper">
             <div class="swiper-slide" :style="'background-image:url(\''+background.bg1+'\')'" >
                 <div class="page-wrap"  :style="{background: backgroundColor.bgColor1}">
-                  <div class="page-box">
-                    <page-one></page-one>
-                  </div>
+					<div class="marquee-wrap">
+						<div class="marquee-left">
+							<img src="~/assets/images/index/trumpet.png">
+						</div>
+						<div class="marquee-right">
+							<NewMarquee content="【 金融知识普及月  金融知识进万家  争做理性投资者  争做金融好网民 】“普及金融知识，防范金融风险，共建小康社会”" class="two"  showtwo="false"></NewMarquee>
+						</div>
+						
+					</div>
+					<div class="page-box">
+						<page-one></page-one>
+					</div>
                 </div>
             </div>
             <div class="swiper-slide" :style="'background-image:url(\''+background.bg2+'\')'">
@@ -62,6 +71,7 @@
 	import PageTwoList from "~/components/index/PageTwoList"
 	import PageCompanyDevolp from "~/components/index/PageCompanyDevolp"
 	import VFooter from '~/components/common/footer'
+	import NewMarquee from '~/components/index/NewMarquee'
 	  
 	export default {
 		data () {
@@ -202,7 +212,8 @@
 			PageOne,
 			PageTwoList,
 			PageCompanyDevolp,
-			VFooter
+			VFooter,
+			NewMarquee
 		},
 	}
 </script>
@@ -247,6 +258,34 @@
 				overflow: hidden;
 				width: 100%;
 				height: 100%;
+
+				.marquee-wrap {
+					position: absolute;
+					top: 150px;
+					left: 50%;
+					overflow: hidden;
+					width:720px;
+					height:60px;
+					margin-left: -360px;
+					background:rgba(255,255,255,0.15);
+					border-radius:6px;
+					border:1px solid rgba(255,255,255,0.3);
+
+					.marquee-left {
+						float: left;
+						display: flex;
+						width: 47px;
+						height: 100%;
+						justify-content: center;
+						align-items: center;
+					}
+
+					.marquee-right {
+						float: left;
+						width: 670px;
+						height: 100%;
+					}
+				}	
 
 				.page-box {
 					overflow: hidden;
