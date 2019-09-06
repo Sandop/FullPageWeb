@@ -54,7 +54,7 @@ export default {
 	modules: [
 	],
 	//设置缓存
-	cache: true,
+	cache: false,
 	//禁止预加载效果
 	performance: {
 	  prefetch: false
@@ -72,19 +72,6 @@ export default {
 		extractCSS: {
 			allChunks: true
 		},
-		// optimization: {
-		// 	minimize: true,
-		// 	minimizer: [
-		// 	  // terser-webpack-plugin
-		// 	  // optimize-css-assets-webpack-plugin
-		// 	],
-		// 	splitChunks: {
-		// 	  chunks: 'all',
-		// 	  automaticNameDelimiter: '.',
-		// 	  name: undefined,
-		// 	  cacheGroups: {}
-		// 	}
-		// },
 		vender: ['axios'],
 		extend (config, { isDev, isClient }) {
 			

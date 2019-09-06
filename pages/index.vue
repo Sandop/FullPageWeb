@@ -458,6 +458,9 @@
 		.swiper-container{
 			.swiper-slide {
 				.page-wrap {
+					.marquee-wrap {
+						top: 122px;
+					}
 					.page-box {
 						padding-top: 160px;
 
