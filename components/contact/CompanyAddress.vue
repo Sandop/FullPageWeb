@@ -3,11 +3,11 @@
         <div class="address">
             <p class="name">中信消费金融有限公司</p>
             <p>公司地址：北京市朝阳区建国门外大街19号国际大厦A座2层</p>
-            <p>商务合作：wujing@eciticcfc.com</p>
+            <p>联系邮箱：kf@eciticcfc.com</p>
         </div>
         <div class="phone-wrap">
             <p class="title">客服联系信息</p>
-            <p>客服热线：010 - 65995558（工作日 9:00 - 18:00）</p>
+            <p>客服热线：400-01-95558（工作日 9:00 - 18:00）</p>
         </div>
     </div>
 </template>

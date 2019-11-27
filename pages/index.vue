@@ -6,13 +6,14 @@
             <div class="swiper-slide" :style="'background-image:url(\''+background.bg1+'\')'" >
                 <div class="page-wrap"  :style="{background: backgroundColor.bgColor1}">
 					<div class="marquee-wrap">
-						<div class="marquee-left">
-							<img src="~/assets/images/index/trumpet.png">
-						</div>
-						<div class="marquee-right">
-							<NewMarquee content="【 金融知识普及月  金融知识进万家  争做理性投资者  争做金融好网民 】“普及金融知识，防范金融风险，共建小康社会”" class="two"  showtwo="false"></NewMarquee>
-						</div>
-						
+						<nuxt-link to="/statement">
+							<div class="marquee-left">
+								<img src="~/assets/images/index/trumpet.png">
+							</div>
+							<div class="marquee-right">
+								<NewMarquee :content="content" class="two"  showtwo="false"></NewMarquee>
+							</div>
+						</nuxt-link>
 					</div>
 					<div class="page-box">
 						<page-one></page-one>
@@ -193,7 +194,8 @@
 						desc: '正式对外宣布开业并发布各项业务',
 						arrow: false
 					}
-				]
+				],
+				content: '【声明】 关于不法分子冒用我司名义实施诈骗的声明  '
 			}
 		},
 		mounted() {

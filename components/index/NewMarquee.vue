@@ -80,9 +80,11 @@
 
                 span{
                     display: inline-block;
+                    min-width: 680px;
                     white-space: nowrap;
-                    padding-right: 25px;
+                    padding-right: 20px;
                     font-size: 18px;
+                    text-align: left;
                 }
             }
 

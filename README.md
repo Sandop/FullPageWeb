@@ -20,3 +20,7 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+
+
+
+$ npm install  之后需要修改node_modoles>swiper>dist>css>swiper.css,修改右侧控制点样式

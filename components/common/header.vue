@@ -11,8 +11,12 @@
                             <nuxt-link to="/">首页</nuxt-link>
                         </li>
                         <li class="nav-list">
+                            <nuxt-link to="/news">党建活动</nuxt-link>
+                        </li>
+                        <li class="nav-list">
                             <nuxt-link to="/contact">联系方式</nuxt-link>
                         </li>
+                        
                     </ul>
                 </div>
             </div>
@@ -34,12 +38,13 @@
         text-align: center;
 
         .header {
-           position: fixed;
+            position: fixed;
             top: 0;
             width: 100%;
             height: 110px;
             background: #fff;
             z-index: 666;
+            box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.05);
 
             .header-box {
                 overflow: hidden;
@@ -98,7 +103,29 @@
                                     }
                                 }
                             }
+
+                            &:nth-child(2) {
+                                a {
+                                    &.nuxt-link-active {
+                                        font-size: 18px;
+                                        font-weight:600;
+
+                                        &:after {
+                                            content: '';
+                                            position: absolute;
+                                            bottom: -7px;
+                                            left: 50%;
+                                            width: 33px;
+                                            height: 2px;
+                                            background: #ff5858;
+                                            border-radius: 6px;
+                                            transform: translateX(-50%);
+                                        }
+                                    }
+                                }
+                            }
                         }
+
                     }
                 }
             }
